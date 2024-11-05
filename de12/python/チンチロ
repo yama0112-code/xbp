@@ -38,10 +38,48 @@ termios.tcsetattr(tty, termios.TCSADRAIN, attr)
 import random
 
 print('次はplayer2さんの番です')
-name="player2"
+name1="player2"
 print("player2さんは賽を振ってください")
+
+import sys
+import termios
+
+print('')
+
+tty = sys.stdin.fileno()
+attr = termios.tcgetattr(tty)
+attr[3] = attr[3] & ~termios.ECHO
+termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+input()
+attr[3] = attr[3] | termios.ECHO
+termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+
 dice3= random.randint(1,6)
 dice4= random.randint(1,6)
+print(name1,"さんは１回目は",dice3,"そして2回目は",dice4,"ですね")
+if dice3 is dice4:
+    print("今回は",dice3,"と",dice4,"のゾロ目です。")
+
+import sys
+import termios
+
+print('')
+
+tty = sys.stdin.fileno()
+attr = termios.tcgetattr(tty)
+attr[3] = attr[3] & ~termios.ECHO
+termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+input()
+attr[3] = attr[3] | termios.ECHO
+termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+
+
+if dice1 + dice2 > dice3 + dice4:
+    print("player1の勝利player2の敗北")
+if dice1 + dice2 < dice3 + dice4:
+    print("player2の勝利player1の敗北")
+if dice1 + dice2 is dice3 + dice4:
+    print("drow")
 
 
 
