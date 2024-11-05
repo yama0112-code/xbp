@@ -1,0 +1,50 @@
+import random
+
+name="player1"
+print("player1さんは賽を2回振ってください")
+
+import sys
+import termios
+
+print('')
+
+tty = sys.stdin.fileno()
+attr = termios.tcgetattr(tty)
+attr[3] = attr[3] & ~termios.ECHO
+termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+input()
+attr[3] = attr[3] | termios.ECHO
+termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+
+dice1= random.randint(1,6)
+dice2= random.randint(1,6)
+print(name,"さんは1回目は",dice1,"そして2回目は",dice2,"ですね")
+if dice1 is dice2:
+    print("今回は",dice1,"と",dice2,"のゾロ目です。")
+
+import sys
+import termios
+
+print('')
+
+tty = sys.stdin.fileno()
+attr = termios.tcgetattr(tty)
+attr[3] = attr[3] & ~termios.ECHO
+termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+input()
+attr[3] = attr[3] | termios.ECHO
+termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+
+import random
+
+print('次はplayer2さんの番です')
+name="player2"
+print("player2さんは賽を振ってください")
+dice3= random.randint(1,6)
+dice4= random.randint(1,6)
+
+
+
+
+
+
