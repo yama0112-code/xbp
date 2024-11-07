@@ -2,35 +2,120 @@
 <html lang="jp">
 <head>
     <!-- ⑥↓タイトルを変えてみよう -->
-    <title>やま</title>
+    <title>ゲーム作り</title>
     <!-- ⑤スタイルシートの設定をしよう -->
     <!-- h1.htmlからある行をコピペしてくればOK -->
 </head><link rel="stylesheet" href="./css/style.css">
 <body>
-    <h1>見出し1
+ <h1>ゲーム作り</h1>  
+ <h2>チンチロ</h2> 
+ こんんかいの課題で、僕はpythonを用いてチンチロを作ることにしました。<br>
+ <h3>チンチロの本来のルール</h3>
+1.ゲームは２人以上で行われ、まずは親を決める。親以外のメンバーは子になる<br>
+2.子が賭け金を決めたら、親がサイコロを振って勝負する役（数）を決める。３回まで振ることができるが、役が出たらその役で勝負<br>
+3.子が一人ずつサイコロを振る。親より強い役が出たら子の勝ち。同じなら引き分け。親より弱いのが出たら子の負け。親に勝ったら自分の賭けた金額を親からもらい、負けたら親に払う。<br>
+4.子全員との勝負が終わったら親の交代で、左隣の人に親の権利が移る。<br>
+5.これを繰り返して参加者全員に親が回ったら、一回のゲームが終了。<br>
+<a href="https://www.kyumamorita.com/entry/tintirorin" target="_blank">参照</a><br>
+<br>
+<h3>今回のルール</h3>
+1.player1とplayer2を決める。今回は一人あるいは二人のゲームに限定。<br>
+2.まず最初に、指示に従いplayer1がサイコロを振る。<br>
+3.次にplayer2がサイコロを振る。<br>
+4.二つのサイコロの合計が大きかった方の勝ち。<br>
+<h3>ゲームのソースコード</h3>
+<pre><code>
+    import random
 
-    </h1>
-    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
-    <div>
-        
-         山崎　パソコンむずい<br>
-         2限空きコマ
-    </div>
-    <img src="./images/testimage.png"width="40%"><br>
-    <img src="../images/0_XBlogo.png"width="5%"><br>
-    <ol>
-    <li>中級英語</li>
-<li>空きコマ</li>
-</ol>
-<ul>
-    <li>遅刻</li>
-    <li>記入ミス</li>
-</ul>
-<a href="./index.html">デザイン演習I・IIトップページ</a><br>
-<a href="../index.html">XBPトップページ</a><br>
-<a href="https://www.yahoo.co.jp/" target="_blank">yahoo</a><br>
-<a href="./files/test.pdf" target="_blank">pdfファイル</a><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rkRBmsCXyQQ?si=AXJCK-3M6nx6HKbz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+    name="player1"
+    print("player1さんは賽を2回振ってください")
+    
+    import sys
+    import termios
+    
+    print('')
+    
+    tty = sys.stdin.fileno()
+    attr = termios.tcgetattr(tty)
+    attr[3] = attr[3] & ~termios.ECHO
+    termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+    input()
+    attr[3] = attr[3] | termios.ECHO
+    termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+    
+    dice1= random.randint(1,6)
+    dice2= random.randint(1,6)
+    print(name,"さんは1回目は",dice1,"そして2回目は",dice2,"ですね")
+    if dice1 is dice2:
+        print("今回は",dice1,"と",dice2,"のゾロ目です。")
+    
+    import sys
+    import termios
+    
+    print('')
+    
+    tty = sys.stdin.fileno()
+    attr = termios.tcgetattr(tty)
+    attr[3] = attr[3] & ~termios.ECHO
+    termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+    input()
+    attr[3] = attr[3] | termios.ECHO
+    termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+    
+    import random
+    
+    print('次はplayer2さんの番です')
+    name1="player2"
+    print("player2さんは賽を振ってください")
+    
+    import sys
+    import termios
+    
+    print('')
+    
+    tty = sys.stdin.fileno()
+    attr = termios.tcgetattr(tty)
+    attr[3] = attr[3] & ~termios.ECHO
+    termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+    input()
+    attr[3] = attr[3] | termios.ECHO
+    termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+    
+    dice3= random.randint(1,6)
+    dice4= random.randint(1,6)
+    print(name1,"さんは１回目は",dice3,"そして2回目は",dice4,"ですね")
+    if dice3 is dice4:
+        print("今回は",dice3,"と",dice4,"のゾロ目です。")
+    
+    import sys
+    import termios
+    
+    print('')
+    
+    tty = sys.stdin.fileno()
+    attr = termios.tcgetattr(tty)
+    attr[3] = attr[3] & ~termios.ECHO
+    termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+    input()
+    attr[3] = attr[3] | termios.ECHO
+    termios.tcsetattr(tty, termios.TCSADRAIN, attr)
+    
+    
+    if dice1 + dice2 > dice3 + dice4:
+        print("player1の勝利player2の敗北")
+    if dice1 + dice2 < dice3 + dice4:
+        print("player2の勝利player1の敗北")
+    if dice1 + dice2 is dice3 + dice4:
+        print("drow")
+    
+</code></pre>
+以上がゲームのコードになります。<br>
+<h2>感想</h2>
+正直言ってクソ難しかったです。なのに大したゲームではないです。<br>
+ゲームを作成することの難しさが身に染みました。<br>
+ボタンを押すことで話を進められるように設定するだけでも難しく、調べてできたソースコード<br>
+を模倣することでしか自分には再現できませんでした。<br>
+参考にさせていただいたソースコード　<a href="https://teratail.com/questions/226479" target="_blank">参照</a><br>
+次はもっと手残ったものを作ってみたいです。
 </body>
 </html>
