@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>API課題</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head><link rel="stylesheet" href="./css/style.css">
+<body>
+    <h1>API課題</h1>
+    自分が一番使う最寄り駅のダイヤを検索するソースコードを書きました。<br>
+    本当はとこ浜駅なども追加したかったのですが、時間がなかったのでとりあえず久里浜駅西堀作りました。<br>
+    時間がある時にexcelで作ったcsvファイルにアップデートしていきたいと考えています。<br>
+<h2>今回つくったソースコード</h2>
+<pre><code>
+    import pandas as pd
+
+#cvsファイルの読み込み
+df = pd.read_csv("de12/pp/京急久里浜.csv")
+ 
+station_name="久里浜"
+start_time="8:00"
+end_time="9:00"
+
+filtered_df=df[(df["駅名"]== station_name) &
+(df["時刻"]>=start_time)&
+(df["時刻"]<=end_time)]
+
+if not filtered_df.empty:
+    print(filtered_df)
+else:
+    print("該当するダイヤがありません。")
+</code></pre>
+<h2>感想</h2>
+今回の課題を制作する上で、ダイヤ検索のソースとしてのファイルをcsv形式で作ったのですが、<br>
+そのためにいちいちアナログに打ち込んで作ったのでクソめんどくさかったです。<br>
+もっといい方法がないか模索する必要がありました。<br>
+また、今回自分が作ったものより便利なものがネットの海にはたくさんあるため、ソースコード書く以前に<br>
+アイデアを生み出すことのほうが肝心だと気づきました。<br>
+</body>
+</html>
