@@ -27,16 +27,17 @@
     .img-btn {
         display: block;
         margin: 0 auto;
+        width: 1000px;
+        height: auto;
+        transition: 0.3s;
+    }
+    .img-btn:hover {
+        opacity: 0.7;
     }
     main h2{
         padding-bottom: 20px;
         text-align: center;
         padding-top: 20px;
-    }
-    .img-btn {
-        width: 1000px;
-        max-width: 1000px;
-        height: auto;
     }
     main {
         background-color: gray;
