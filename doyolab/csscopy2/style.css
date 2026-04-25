@@ -24,7 +24,8 @@
     .img-btn {
         display: block;
         margin: 0 auto;
-        width: 1000px;
+        width: 100%;
+        max-width: 1000px;
         height: auto;
         transition: 0.3s;
     }
@@ -44,6 +45,9 @@
         color: white;
         text-align: center;
     }
+    aside h2{
+        padding-top: 20px;
+    }
     aside .btn{
         display: inline-block;
         background-color: white;
@@ -51,3 +55,4 @@
         border: 5px solid lightblue;
         border-radius: 100px;
     }
+   
