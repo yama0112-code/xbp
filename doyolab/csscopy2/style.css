@@ -36,6 +36,18 @@
         text-align: center;
         padding-top: 20px;
     }
-    body {
+   main {
         background-color: gray;
+    }
+    aside {
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    aside .btn{
+        display: inline-block;
+        background-color: white;
+        padding: 10px 40px;
+        border: 5px solid lightblue;
+        border-radius: 100px;
     }
