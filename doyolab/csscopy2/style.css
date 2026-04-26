@@ -7,7 +7,7 @@
         text-decoration: none;
     }
     header{
-        background-color: lightblue;
+        background-color: transparent;
         padding: 30px;
         text-align: center;
     }
@@ -38,7 +38,8 @@
         padding-top: 20px;
     }
    main {
-        background-color: gray;
+        background-color: transparent;
+        text-align: center;
     }
     aside {
         background-color: black;
@@ -63,4 +64,64 @@
             font-size: 15px;
         }
     }
+    h1 {
+        position: relative;
+        display: inline-block;
+        padding: 0 55px;
+      }
+      
+      h1:before, h1:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        width: 45px;
+        height: 2px;
+        border-top: solid 1px black;
+        border-bottom: solid 1px black;
+      }
+      
+      h1:before {
+        left:0;
+      }
+      h1:after {
+        right: 0;
+      }
+      h1 {
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+h1:before, h1:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: black;
+}
+h1:before {
+  left: 7px;
+}
+h1:after {
+  right: 7px;
+}
+header,main {
+    background-image: 
+    linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+    url("../images2/pexels-steve-29172403.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* ←これでスクロールしても動かない */
+}
+footer {
+    text-align: center;
+}
+
+      
+      
+   
    
