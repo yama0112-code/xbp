@@ -63,7 +63,16 @@
         main h2{
             font-size: 15px;
         }
-    }
+        main,header{
+            min-height: 200px;
+        }
+        aside{
+            padding: 30px;
+        }
+       
+        }
+       
+            
     h1 {
         position: relative;
         display: inline-block;
@@ -116,6 +125,7 @@ header,main {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* ←これでスクロールしても動かない */
+    min-height: 300px;
 }
 footer {
     text-align: center;
