@@ -7,7 +7,13 @@ a{
     text-decoration: none;
 }
 header{
-    background-color: white;
+    background-image: 
+    linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+    url("../images/pexels-snapwire-37728.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
     padding: 30px;
     text-align: center;
 }
@@ -81,3 +87,5 @@ footer{
 body {
     text-align: center;
 }
+
+    
