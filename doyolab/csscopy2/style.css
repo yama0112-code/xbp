@@ -117,7 +117,7 @@ h1:before {
 h1:after {
   right: 7px;
 }
-header,main {
+body {
     background-image: 
     linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
     url("../images2/sky.jpg");

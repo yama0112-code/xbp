@@ -27,7 +27,8 @@
     .img-btn {
         display: block;
         margin: 0 auto;
-        width: 1000px;
+        width: 100%;
+        max-width: 1000px;
         height: auto;
         transition: 0.3s;
     }
@@ -35,9 +36,9 @@
         opacity: 0.7;
     }
     main h2{
-        padding-bottom: 40px;
+        padding-bottom: 20px;
         text-align: center;
-        padding-top: 40px;
+        padding-top: 20px;
     }
     main {
         background-color: transparent;
@@ -104,7 +105,7 @@ h1:before {
 h1:after {
   right: 7px;
 }
-header,main {
+body {
     background-image: 
     linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
     url("../images/sky.jpg");
@@ -113,4 +114,21 @@ header,main {
     background-repeat: no-repeat;
     background-attachment: fixed; /* ←これでスクロールしても動かない */
 }
+@media (max-width: 600px){
+    header h1{
+        font-size: 40px;
+    }
+    main h2{
+        font-size: 15px;
+    }
+    main,header{
+        min-height: 200px;
+    }
+    aside{
+        padding: 30px;
+    }
+   
+    }
+
+
    
