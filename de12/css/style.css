@@ -114,21 +114,5 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed; /* ←これでスクロールしても動かない */
 }
-@media (max-width: 600px){
-    header h1{
-        font-size: 40px;
-    }
-    main h2{
-        font-size: 15px;
-    }
-    main,header{
-        min-height: 200px;
-    }
-    aside{
-        padding: 30px;
-    }
-   
-    }
-
 
    
