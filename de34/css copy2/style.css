@@ -109,7 +109,7 @@ h1:after {
 body {
     background-image: 
     linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-    url("./imagescopy/sky.jpg");
+    url("../imagescopy/sky.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
